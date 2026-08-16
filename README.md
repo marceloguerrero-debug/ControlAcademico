@@ -55,4 +55,3 @@ ControlAcademico/
 | 5 | Persona 5  | Matrícula (relación Estudiante–Curso) | Pantalla de Matrículas |
 | 6 | Persona 6  | Calificación (implementa IEvaluable) | Pantalla de Calificaciones |
 
-> Reemplazar los nombres y números de carnet reales de cada integrante.
