@@ -4,7 +4,7 @@
 - Susana Nicole Valle Méndez -  N° Carnet VM253306
 - Jose Miguel Sosa Ayala - N° Carnet SA251597
 
-##Mi parte (Rama 3 )
+## Mi parte (Rama 3 )
 - Jose Miguel Sosa Ayala 
 - docente(hereda de persona) Pantalla formulario
 
