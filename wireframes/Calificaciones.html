@@ -3,132 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Control Académico - Calificaciones</title>
-    <link href="https://jsdelivr.net" rel="stylesheet">
-    <link href="https://jsdelivr.net" rel="stylesheet">
+    <title>Control Académico - Calificaciones</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f3f4f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .navbar {
+            background-color: #1e293b;
+            color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 24px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-logo {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .nav-user {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .main-container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 240px;
+            background-color: #ffffff;
+            border-right: 1px solid #e5e7eb;
+            padding: 20px 0;
+        }
+
+        .menu-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-item {
+            padding: 12px 24px;
+            color: #4b5563;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .menu-item:hover {
+            background-color: #f9fafb;
+            color: #1d4ed8;
+        }
+
+        .menu-item.active {
+            background-color: #eff6ff;
+            color: #1d4ed8;
+            border-left: 4px solid #1d4ed8;
+        }
+
+        .content-area {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card-header h2 {
+            color: #1f2937;
+            font-size: 1.5rem;
+        }
+
+        .toolbar {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-box input, .filter-box select {
+            padding: 10px 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            outline: none;
+            font-size: 0.95rem;
+            width: 280px;
+        }
+
+        .search-box input:focus, .filter-box select:focus {
+            border-color: #1d4ed8;
+        }
+
+        .btn-primary {
+            background-color: #10b981;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-left: auto;
+        }
+
+        .btn-primary:hover {
+            background-color: #059669;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .data-table th, .data-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .data-table th {
+            background-color: #f9fafb;
+            color: #4b5563;
+            font-weight: 600;
+        }
+
+        .data-table tbody tr:hover {
+            background-color: #f8fafc;
+        }
+
+        .nota-badge {
+            background-color: #f3f4f6;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            border: 1px solid #e5e7eb;
+        }
+
+        .status-badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .status-badge.aprobado {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-badge.reprobado {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .btn-link {
+            background: none;
+            border: none;
+            color: #1d4ed8;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: underline;
+            padding: 0 5px;
+        }
+
+        .btn-link.delete {
+            color: #dc2626;
+        }
+
+        .btn-link:hover {
+            opacity: 0.8;
+        }
+
+        .card-footer {
+            font-size: 0.85rem;
+            color: #6b7280;
+            border-top: 1px solid #f3f4f6;
+            padding-top: 15px;
+        }
+    </style>
 </head>
-<body class="bg-light">
+<body>
 
-    <!--  Barra de Navegación Superior -->
-    <nav class="navbar navbar-dark bg-dark shadow-sm">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">
-                <i class="bi bi-mortarboard-fill me-2"></i> Control Académico — Universidad Don Bosco
-            </span>
-            <div class="text-white small">
-                <i class="bi bi-person-circle me-1"></i> 
-            </div>
+    <header class="navbar">
+        <div class="nav-logo">
+            <span>Control Académico — Universidad Don Bosco</span>
         </div>
-    </nav>
+        <div class="nav-user">
+            <span>Integrante: Persona 6</span>
+        </div>
+    </header>
 
-    <div class="container-fluid my-4">
-        <div class="row">
-            
-            <!--  Menú Lateral  -->
-            <div class="col-md-3 col-lg-2 mb-4">
-                <div class="list-group shadow-sm">
-                    <a href="#" class="list-group-item list-group-item-action text-muted"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
-                    <a href="#" class="list-group-item list-group-item-action text-muted"><i class="bi bi-people me-2"></i> Estudiantes</a>
-                    <a href="#" class="list-group-item list-group-item-action text-muted"><i class="bi bi-person-badge me-2"></i> Docentes</a>
-                    <a href="#" class="list-group-item list-group-item-action text-muted"><i class="bi bi-book me-2"></i> Cursos</a>
-                    <a href="#" class="list-group-item list-group-item-action text-muted"><i class="bi bi-journal-check me-2"></i> Matrículas</a>
-                    <!-- Tu pantalla activa -->
-                    <a href="#" class="list-group-item list-group-item-action active bg-primary border-primary"><i class="bi bi-file-earmark-spreadsheet me-2"></i> Calificaciones</a>
+    <div class="main-container">
+        
+        <aside class="sidebar">
+            <nav class="menu-list">
+                <a href="#" class="menu-item">Dashboard</a>
+                <a href="#" class="menu-item">Estudiantes</a>
+                <a href="#" class="menu-item">Docentes</a>
+                <a href="#" class="menu-item">Cursos</a>
+                <a href="#" class="menu-item">Matrículas</a>
+                <a href="#" class="menu-item active">Calificaciones</a>
+            </nav>
+        </aside>
+
+        <main class="content-area">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Gestión de Calificaciones</h2>
+                </div>
+                
+                <div class="toolbar">
+                    <div class="search-box">
+                        <input type="text" placeholder="Buscar estudiante por nombre...">
+                    </div>
+                    <div class="filter-box">
+                        <select>
+                            <option>Todos los Cursos</option>
+                            <option>Matemáticas</option>
+                            <option>Programación</option>
+                            <option>Bases de Datos</option>
+                        </select>
+                    </div>
+                    <button class="btn-primary">Asignar Nota</button>
+                </div>
+
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Estudiante</th>
+                                <th>Curso / Materia</th>
+                                <th>Nota</th>
+                                <th>Estado</th>
+                                <th class="text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1</strong></td>
+                                <td>Carlos Gómez</td>
+                                <td>Matemáticas</td>
+                                <td><span class="nota-badge">8.5</span></td>
+                                <td><span class="status-badge aprobado">Aprobado</span></td>
+                                <td class="text-center">
+                                    <button class="btn-link">Editar</button>
+                                    <button class="btn-link delete">Eliminar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>2</strong></td>
+                                <td>Ana Martínez</td>
+                                <td>Programación</td>
+                                <td><span class="nota-badge">5.4</span></td>
+                                <td><span class="status-badge reprobado">Reprobado</span></td>
+                                <td class="text-center">
+                                    <button class="btn-link">Editar</button>
+                                    <button class="btn-link delete">Eliminar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>3</strong></td>
+                                <td>Luis Alvarenga</td>
+                                <td>Bases de Datos</td>
+                                <td><span class="nota-badge">7.0</span></td>
+                                <td><span class="status-badge aprobado">Aprobado</span></td>
+                                <td class="text-center">
+                                    <button class="btn-link">Editar</button>
+                                    <button class="btn-link delete">Eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card-footer">
+                    <p>Mostrando 3 calificaciones simuladas en memoria.</p>
                 </div>
             </div>
-
-            <!--  Contenido Principal: Gestión de Calificaciones -->
-            <div class="col-md-9 col-lg-10">
-                <div class="card shadow-sm border-0">
-                    <div class="card-header bg-white py-3 border-0">
-                        <h4 class="card-title mb-0 text-secondary fw-bold">📋 Pantalla de Calificaciones</h4>
-                    </div>
-                    <div class="card-body">
-                        
-                        <!-- Controles de búsqueda y filtrado -->
-                        <div class="row g-3 mb-4">
-                            <div class="col-md-5">
-                                <div class="input-group">
-                                    <span class="input-group-text bg-white"><i class="bi bi-search text-muted"></i></span>
-                                    <input type="text" class="form-control" placeholder="Buscar estudiante por nombre...">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <select class="form-select">
-                                    <option selected>Filtrar por Curso (Todos)</option>
-                                    <option>Matemáticas</option>
-                                    <option>Programación</option>
-                                    <option>Bases de Datos</option>
-                                </select>
-                            </div>
-                            <div class="col-md-3 text-md-end">
-                                <button class="btn btn-success w-100"><i class="bi bi-plus-circle me-1"></i> Asignar Nota</button>
-                            </div>
-                        </div>
-
-                        
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle border">
-                                <thead class="table-light">
-                                    <tr>
-                                        <th style="width: 80px;">ID</th>
-                                        <th>Estudiante</th>
-                                        <th>Curso/Materia</th>
-                                        <th style="width: 100px;">Nota</th>
-                                        <th>Estado</th>
-                                        <th class="text-center" style="width: 150px;">Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><strong>1</strong></td>
-                                        <td>Carlos Gómez</td>
-                                        <td>Matemáticas</td>
-                                        <td><span class="badge bg-secondary p-2 fs-6">8.5</span></td>
-                                        <td><span class="badge bg-success"><i class="bi bi-check-circle-fill me-1"></i> Aprobado</span></td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil"></i></button>
-                                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>2</strong></td>
-                                        <td>Ana Martínez</td>
-                                        <td>Programación</td>
-                                        <td><span class="badge bg-secondary p-2 fs-6">5.4</span></td>
-                                        <td><span class="badge bg-danger"><i class="bi bi-x-circle-fill me-1"></i> Reprobado</span></td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil"></i></button>
-                                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>3</strong></td>
-                                        <td>Luis Alvarenga</td>
-                                        <td>Bases de Datos</td>
-                                        <td><span class="badge bg-secondary p-2 fs-6">7.0</span></td>
-                                        <td><span class="badge bg-success"><i class="bi bi-check-circle-fill me-1"></i> Aprobado</span></td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil"></i></button>
-                                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                      
-                        <div class="d-flex justify-content-between align-items-center mt-3">
-                            <span class="text-muted small">Mostrando 3 calificaciones asignadas en memoria.</span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        </main>
     </div>
 
-    
 </body>
 </html>
