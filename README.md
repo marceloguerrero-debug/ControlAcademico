@@ -53,5 +53,5 @@ ControlAcademico/
 | 3 | José Miguel Sosa Ayala SA251597 | Docente (hereda de Persona) | Pantalla de Formulario |
 | 4 | Susana Nicole Valle Méndez. VM253306 | Curso | Pantalla de Detalle |
 | 5 | Alessandra Guadalupe González Burgos. GB253116 | Matrícula (relación Estudiante–Curso) | Pantalla de Matrículas |
-| 6 | Persona 6  | Calificación (implementa IEvaluable) | Pantalla de Calificaciones |
+| 6 | Alessandra González  | Calificación (implementa IEvaluable) | Pantalla de Calificaciones |
 
