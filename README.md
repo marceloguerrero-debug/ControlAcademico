@@ -64,5 +64,5 @@ ControlAcademico/
 | 2 | Persona 2 (Daniela Ramos) | Estudiante (hereda de Persona) | Pantalla de Listado |
 | 3 | Persona 3  | Docente (hereda de Persona) | Pantalla de Formulario |
 | 4 | Persona 4  | Curso | Pantalla de Detalle |
-| 5 | Persona 5  | Matrícula (relación Estudiante–Curso) | Pantalla de Matrículas |
-| 6 | Persona 6  | Calificación (implementa IEvaluable) | Pantalla de Calificaciones |
+| 5 | Alessandra Guadalupe González Burgos - GB253116  | Matrícula (relación Estudiante–Curso) | Pantalla de Matrículas |
+| 6 | Alessandra Guadalupe González Burgos - GB253116  | Calificación (implementa IEvaluable) | Pantalla de Calificaciones |
