@@ -1,57 +1,17 @@
-# Sistema de Control Académico
+## ⚙️ Requisitos e Instalación
 
-Proyecto de Cátedra — Fase 1 (DSP404, Universidad Don Bosco)
+> **Aportado por Persona 2 (Daniela Ramos)** — Guía de configuración del entorno y compilación del sistema de Control Académico en C# / .NET.
 
-## Descripción
+### 📋 Prerrequisitos del Sistema
+1. **.NET SDK** versión **8.0** o superior ([dotnet.microsoft.com/download](https://dotnet.microsoft.com/download)).
+2. **Entorno de Desarrollo (IDE)**:
+   - **Visual Studio 2022** (con la carga de trabajo *Desarrollo de escritorio de .NET*).
+   - **Visual Studio Code** (con extensión oficial *C# Dev Kit*).
+3. **Git** para control de versiones.
 
-Sistema para el registro y control de estudiantes, docentes, cursos, matrículas y
-calificaciones de una institución educativa. En esta primera fase se modelan las
-clases principales del sistema en C# aplicando Programación Orientada a Objetos
-(herencia, encapsulamiento y clases abstractas/interfaces), junto con un prototipo
-funcional en consola. Más adelante, en la Fase 2, este mismo proyecto se ampliará
-a una aplicación web completa en ASP.NET conectada a una base de datos.
+### 🚀 Pasos de Instalación y Ejecución
 
-## Tecnologías utilizadas
-
-- C# (.NET Framework / .NET)
-- Consola (prototipo Fase 1)
-- Colecciones genéricas (`List<T>`)
-- Git / GitHub
-
-## Estructura del proyecto
-
-```
-ControlAcademico/
-├── README.md
-├── src/
-│   ├── Program.cs
-│   └── Modelos/
-│       └── Persona.cs
-├── wireframes/
-│   └── pantalla-principal-dashboard.html
-└── docs/
-```
-
-## Instrucciones de instalación y ejecución
-
-1. Clonar el repositorio:
-   ```
-   git clone <URL-del-repositorio>
-   ```
-2. Abrir la carpeta `src/` en Visual Studio, o compilar desde la terminal:
-   ```
-   csc Program.cs Modelos/Persona.cs -out:ControlAcademico.exe
-   ```
-3. Ejecutar el archivo generado (`ControlAcademico.exe`) o presionar F5 en Visual Studio.
-
-## Integrantes del equipo
-
-| # | Integrante | Clase en C# | Pantalla UI/UX |
-|---|------------|--------------|-----------------|
-| 1 | Persona 1  | Persona (clase abstracta base) | Pantalla Principal / Dashboard |
-| 2 | Persona 2  | Estudiante (hereda de Persona) | Pantalla de Listado |
-| 3 | Persona 3  | Docente (hereda de Persona) | Pantalla de Formulario |
-| 4 | Persona 4  | Curso | Pantalla de Detalle |
-| 5 | Persona 5  | Matrícula (relación Estudiante–Curso) | Pantalla de Matrículas |
-| 6 | Persona 6  | Calificación (implementa IEvaluable) | Pantalla de Calificaciones |
-
+#### 1. Clonar el repositorio
+```bash
+git clone https://github.com/marceloguerrero-debug/ControlAcademico.git
+cd ControlAcademico
