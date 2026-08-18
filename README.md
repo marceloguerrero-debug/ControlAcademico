@@ -49,7 +49,7 @@ ControlAcademico/
 | # | Integrante | Clase en C# | Pantalla UI/UX |
 |---|------------|--------------|-----------------|
 | 1 | Marcelo Eduardo Guerrero Rodríguez. GR241968| Persona (clase abstracta base) | Pantalla Principal / Dashboard |
-| 2 | Persona 2  | Estudiante (hereda de Persona) | Pantalla de Listado |
+| 2 | Daniela Jazmin Torres Ramos TR232197 | Estudiante (hereda de Persona) | Pantalla de Listado |
 | 3 | Persona 3  | Docente (hereda de Persona) | Pantalla de Formulario |
 | 4 | Susana Nicole Valle Méndez. VM253306 | Curso | Pantalla de Detalle |
 | 5 | Alessandra Guadalupe González Burgos. GB253116 | Matrícula (relación Estudiante–Curso) | Pantalla de Matrículas |
