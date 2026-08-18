@@ -62,7 +62,7 @@ ControlAcademico/
 |---|------------|--------------|-----------------|
 | 1 | Marcelo Eduardo Guerrero Rodriguez - GR241968  | Persona (clase abstracta base) | Pantalla Principal / Dashboard |
 | 2 | Persona 2 (Daniela Ramos) | Estudiante (hereda de Persona) | Pantalla de Listado |
-| 3 | Persona 3  | Docente (hereda de Persona) | Pantalla de Formulario |
+| 3 | José Miguel Sosa Ayala - SA251597  | Docente (hereda de Persona) | Pantalla de Formulario |
 | 4 | Persona 4  | Curso | Pantalla de Detalle |
 | 5 | Alessandra Guadalupe González Burgos - GB253116  | Matrícula (relación Estudiante–Curso) | Pantalla de Matrículas |
 | 6 | Alessandra Guadalupe González Burgos - GB253116  | Calificación (implementa IEvaluable) | Pantalla de Calificaciones |
