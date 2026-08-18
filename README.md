@@ -43,17 +43,15 @@ ControlAcademico/
 ```
 
 ## Instrucciones de instalación y ejecución
-
-1. Clonar el repositorio:
-   ```
-   git clone https://github.com/marceloguerrero-debug/ControlAcademico.git
-   ```
-2. Abrir la carpeta `src/` en Visual Studio como proyecto de consola (.NET Framework 4.8),
-   o compilar desde la terminal:
-   ```
-   csc Program.cs Modelos/*.cs -out:ControlAcademico.exe
-   ```
-3. Ejecutar el archivo generado (`ControlAcademico.exe`) o presionar F5 en Visual Studio.
+    Opción 1: Visual Studio (recomendado)
+    Clonar o descargar este repositorio.
+    Abrir Visual Studio → Create a new project → Console App (.NET Framework).
+    Nombrar el proyecto ControlAcademico y seleccionar .NET Framework 4.8.
+    Borrar el Program.cs que Visual Studio crea por defecto.
+    Clic derecho en el proyecto → Add → New Folder → nombrarla Modelos.
+    Clic derecho en el proyecto → Add → Existing Item... → seleccionar src/Program.cs.
+    Clic derecho en la carpeta Modelos → Add → Existing Item... → seleccionar los 7 archivos dentro de src/Modelos/ (Persona.cs, Estudiante.cs, Docente.cs, Curso.cs, IRegistrable.cs, Matricula.cs, Calificacion.cs).
+    Presionar F5 para ejecutar.
 
 ## Integrantes del equipo
 
