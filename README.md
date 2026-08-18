@@ -51,7 +51,7 @@ ControlAcademico/
 | 1 | Persona 1  | Persona (clase abstracta base) | Pantalla Principal / Dashboard |
 | 2 | Persona 2  | Estudiante (hereda de Persona) | Pantalla de Listado |
 | 3 | Persona 3  | Docente (hereda de Persona) | Pantalla de Formulario |
-| 4 | Susana Nicole Valle Méndez. VM253306 | Curso | Interfaz IRegistrable| Pantalla de Detalle |
+| 4 | Susana Nicole Valle Méndez. VM253306 | Curso | Pantalla de Detalle |
 | 5 | Alessandra Guadalupe González Burgos. GB253116 | Matrícula (relación Estudiante–Curso) | Pantalla de Matrículas |
 | 6 | Persona 6  | Calificación (implementa IEvaluable) | Pantalla de Calificaciones |
 
