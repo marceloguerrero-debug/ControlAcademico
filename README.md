@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/31201305/README.md)
 # Sistema de Control Académico
 
 Proyecto de Cátedra — Fase 1 (DSP404, Universidad Don Bosco)
@@ -63,6 +62,6 @@ ControlAcademico/
 | 1 | Marcelo Eduardo Guerrero Rodriguez - GR241968  | Persona (clase abstracta base) | Pantalla Principal / Dashboard |
 | 2 | Persona 2 (Daniela Ramos) | Estudiante (hereda de Persona) | Pantalla de Listado |
 | 3 | José Miguel Sosa Ayala - SA251597  | Docente (hereda de Persona) | Pantalla de Formulario |
-| 4 | Persona 4  | Curso | Pantalla de Detalle |
+| 4 | Susana Nicole Valle Méndez - VM253306  | Curso | Pantalla de Detalle |
 | 5 | Alessandra Guadalupe González Burgos - GB253116  | Matrícula (relación Estudiante–Curso) | Pantalla de Matrículas |
 | 6 | Alessandra Guadalupe González Burgos - GB253116  | Calificación (implementa IEvaluable) | Pantalla de Calificaciones |
