@@ -17,6 +17,7 @@ a una aplicación web completa en ASP.NET conectada a una base de datos.
 - Consola (prototipo Fase 1)
 - Colecciones genéricas (`List<T>`)
 - Git / GitHub
+- Google Drive Video Presentación
 
 ## Estructura del proyecto
 
@@ -63,3 +64,7 @@ ControlAcademico/
 | 4 | Susana Nicole Valle Méndez - VM253306  | Curso | Pantalla de Detalle |
 | 5 | Alessandra Guadalupe González Burgos - GB253116  | Matrícula (relación Estudiante–Curso) | Pantalla de Matrículas |
 | 6 | Alessandra Guadalupe González Burgos - GB253116  | Calificación (implementa IEvaluable) | Pantalla de Calificaciones |
+
+
+## Video  
+https://drive.google.com/file/d/1njLirsd0M4dwIirE8Bt67I102BxHhEUm/view?usp=sharing 
